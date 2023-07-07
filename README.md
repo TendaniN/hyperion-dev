@@ -99,12 +99,13 @@ If we consider all folders being either a "generic" or a "feature" folder, we on
 
 Examples of "generic" folders:
 
-- api
-- components
-- assets
-- utils
-- pages
-- state
+- api <!-- api endpoint files  -->
+- assets <!-- images and other media  -->
+- components <!-- shared component files  -->
+- pages <!-- routing pages structured like site structure  -->
+- state <!-- redux and state files  -->
+- types <!-- global type declarations  -->
+- utils <!-- utility method files and their tests  -->
 
 Given this route config:
 
