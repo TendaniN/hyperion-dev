@@ -1,0 +1,4 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx enforce-branch-name '(hotfix|feat|feature|bugfix|fix)/.+' --ignore '(master|develop)'
