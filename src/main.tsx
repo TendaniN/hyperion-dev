@@ -6,6 +6,7 @@ import { CompatRouter } from "react-router-dom-v5-compat";
 import { ThemeProvider } from "styled-components";
 import { fixVHforMobile } from "utils/fix-vh";
 import Pages from "pages";
+import GlobalStyle from "global-style";
 
 import theme from "components/base-theme";
 
@@ -31,6 +32,7 @@ function Main() {
           </BrowserRouter>
         </LoadVendors>
       </Providers>
+      <GlobalStyle />
     </ThemeProvider>
   );
 }
