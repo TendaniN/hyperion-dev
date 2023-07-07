@@ -25,7 +25,7 @@ export default defineConfig({
   server: {
     strictPort: true,
     https: true,
-    host: "localhost.voyc.ai",
+    host: "localhost",
     port: 3000,
   },
   build: {
