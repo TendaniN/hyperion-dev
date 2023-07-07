@@ -1,0 +1,14 @@
+{
+  "recommendations": [
+    "vunguyentuan.vscode-css-variables",
+    "christian-kohler.npm-intellisense",
+    "esbenp.prettier-vscode",
+    "formulahendry.auto-close-tag",
+    "stylelint.vscode-stylelint",
+    "wix.vscode-import-cost",
+    "dbaeumer.vscode-eslint",
+    "formulahendry.auto-rename-tag",
+    "vincaslt.highlight-matching-tag",
+    "ZixuanChen.vitest-explorer"
+  ]
+}
