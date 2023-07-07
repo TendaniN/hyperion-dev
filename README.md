@@ -66,12 +66,6 @@ code on commit.
 
 You can run `npm run format` to run Prettier on all files.
 
-### Storybook
-
-This project uses [Storybook](https://storybook.js.org) to visually document interface components.
-
-You can start it by running `npm run storybook`
-
 ### Contributing
 
 This repo currently makes use of git-flow. To start work on a new feature, branch off of the `develop` branch with a feature branch:
