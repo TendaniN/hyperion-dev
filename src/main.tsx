@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Providers } from "state/providers";
 import { registerSW } from "virtual:pwa-register";
 import { BrowserRouter } from "react-router-dom";
 import { CompatRouter } from "react-router-dom-v5-compat";
-import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { fixVHforMobile } from "utils/fix-vh";
+import Pages from "pages";
+
+import theme from "components/base-theme";
+
 import LoadVendors from "load-vendors";
 
 if (import.meta.env.PROD) {
@@ -11,18 +16,22 @@ if (import.meta.env.PROD) {
 }
 
 function Main() {
+  useEffect(() => {
+    fixVHforMobile();
+  }, []);
+
   return (
-    <React.StrictMode>
+    <ThemeProvider theme={theme}>
       <Providers>
         <LoadVendors enabled={import.meta.env.PROD}>
           <BrowserRouter>
             <CompatRouter>
-              <div></div>
+              <Pages />
             </CompatRouter>
           </BrowserRouter>
         </LoadVendors>
       </Providers>
-    </React.StrictMode>
+    </ThemeProvider>
   );
 }
 

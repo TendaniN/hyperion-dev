@@ -5,7 +5,7 @@
 1. Clone this repository.
 2. Checkout the `master` branch: `git checkout master`.
 3. Ensure that you have the correct versions of Node and npm installed on your machine (Node v16.13.0 and npm v8.1.0). You can use [nvm](https://github.com/nvm-sh/nvm) to manage these versions. Once nvm is installed, navigate to the project's root directory and run `nvm use`. Alternatively, you can use [Volta](https://volta.sh/) to automatically detect the appropriate Node and npm versions for the project. This configuration can be seen in the `package.json` file.
-4. Install dependencies with npm: `npm install`. During the installation, you may encounter an error due to a version mismatch with `react-dates`, which is an older dependency that still does not supports the latest version of React. To bypass this issue, use the force command: `npm install -f`.
+4. Install dependencies with npm: `npm install`. During the installation, if you encounter an error due to a version mismatch with `react-dates`, which is an older dependency that still does not supports the latest version of React. To bypass this issue, use the force command: `npm install -f`.
 5. Start the development server by running `npm start`.
 
 Once started you should see the following in your terminal:
@@ -91,7 +91,7 @@ Please delete your branch when it is no longer relevant.
 The component file structure maps directly to the UI hierarchy.
 If we consider all folders being either a "generic" or a "feature" folder, we only have one "feature" folder but many "generic" folders.
 
-Examples of "generic" folders:
+This project's folders are:
 
 - api <!-- api endpoint files  -->
 - assets <!-- images and other media  -->

@@ -1,8 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Providers } from "state/providers";
 import Main from "./main";
-import "./index.css";
+import "design-tokens.css";
 
 if (import.meta.env.PROD) {
   // Do not perform logging during production builds
