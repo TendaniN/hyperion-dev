@@ -1,8 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
-import styled from "styled-components/macro";
 import { MENU_MAP } from "constants/index";
 import { Link } from "react-router-dom";
-import { FaArrowRight, FaCaretDown } from "react-icons/fa";
 import {
   RxHamburgerMenu as MenuIcon,
   RxCross2 as CloseIcon,
@@ -12,12 +10,11 @@ import {
 import { ReactComponent as Logo } from "assets/logo.svg";
 import { useClickAway, useEvent, useMedia, useToggle } from "react-use";
 
-import { Dropdown, DropdownMenu, DropdownToggle } from "reactstrap";
 import {
   Wrapper,
   ToggleContainer,
   SideNavbarContainer,
-  HeaderToo,
+  StyledHeader,
   LogoContainer,
   MenuButton,
   Content,
@@ -25,16 +22,18 @@ import {
   SideNavText,
   SubMenuContainer,
   SubMenuOptions,
+  SideNavBottomContainer,
+  SideNavOptionBottom,
 } from "./style";
 
-export const Header = () => {
+export const SideNav = () => {
   const menuRef = useRef(null);
 
   const [showBanner, updateShowBanner] = useState(true);
-  const [dropdownOpen, setDropdownOpen] = useToggle(false);
   const [showMenu, toggleShowMenu] = useToggle(false);
   const [showNav, toggleShowNav] = useToggle(true);
-  const [subMenuOpen, updateSubMenuOpen] = useState(true);
+  const [subMenuOpen, updateSubMenuOpen] = useToggle(false);
+  const [showJoinModal, updateShowJoinModal] = useToggle(false);
 
   const isSmallDevice = useMedia("screen and (max-width: 60em)");
 
@@ -43,6 +42,14 @@ export const Header = () => {
       toggleShowNav();
     }
   }, []);
+
+  const handleShowSubMenu = (hasSubmenu = false) => {
+    if (hasSubmenu) {
+      updateSubMenuOpen(true);
+    } else {
+      updateSubMenuOpen(false);
+    }
+  };
 
   useEvent("keydown", handleToggleNavKeyDown);
 
@@ -65,7 +72,7 @@ export const Header = () => {
           id="sidebar"
           ref={menuRef}
         >
-          <HeaderToo>
+          <StyledHeader>
             <LogoContainer to="/">
               <Logo type="noText" />
             </LogoContainer>
@@ -79,17 +86,15 @@ export const Header = () => {
                 {showMenu ? <CloseIcon /> : <MenuIcon />}
               </MenuButton>
             )}
-          </HeaderToo>
+          </StyledHeader>
           <Content id="menu" isOpen={showMenu}>
             <div style={{ flexDirection: "column", display: "flex" }}>
               {MENU_MAP.map((item) => (
                 <div
-                  onMouseOver={
-                    item.submenu.length > 0
-                      ? () => updateSubMenuOpen(true)
-                      : () => {}
-                  }
+                  key={`menu-item-${item.label}`}
+                  onMouseOver={() => handleShowSubMenu(item.submenu.length > 0)}
                   onMouseLeave={() => updateSubMenuOpen(false)}
+                  onClick={() => handleShowSubMenu(item.submenu.length > 0)}
                 >
                   <Link to="/">
                     <SideNavOption>
@@ -115,22 +120,21 @@ export const Header = () => {
                               className={`dropdown-item ${
                                 item.submenu.length > 0 ? "heading" : ""
                               }`}
+                              key={`submenu-item-${subItem.label}`}
                               to={subItem.link ? subItem.link : ""}
                             >
                               {subItem.label}
                             </Link>
-                            {item.submenu.length > 0 ? (
-                              item.submenu.map(({ label, link }, subidx) => (
+                            {item.submenu.length > 0 &&
+                              item.submenu.map(({ label, link }) => (
                                 <Link
                                   className="dropdown-item"
+                                  key={`submenu-item-${label}`}
                                   to={link ? link : ""}
                                 >
                                   {label}
                                 </Link>
-                              ))
-                            ) : (
-                              <></>
-                            )}
+                              ))}
                           </>
                         ))}
                       </SubMenuOptions>
@@ -139,6 +143,19 @@ export const Header = () => {
                 </div>
               ))}
             </div>
+            <SideNavBottomContainer>
+              <Link to="/login">
+                <SideNavOptionBottom>
+                  <SideNavText>Login</SideNavText>
+                </SideNavOptionBottom>
+              </Link>
+              <SideNavOptionBottom
+                className="active-button"
+                onClick={() => updateShowJoinModal(true)}
+              >
+                <SideNavText>Join Now</SideNavText>
+              </SideNavOptionBottom>
+            </SideNavBottomContainer>
           </Content>
         </SideNavbarContainer>
       </Wrapper>

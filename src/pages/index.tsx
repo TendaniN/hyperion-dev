@@ -1,4 +1,4 @@
-import { Header } from "components/header/index";
+import { SideNav } from "components/navigation/index";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components/macro";
@@ -13,7 +13,7 @@ const Pages = () => {
     <Switch>
       <Route path="/">
         <PageContainer>
-          <Header />
+          <SideNav />
         </PageContainer>
       </Route>
     </Switch>
