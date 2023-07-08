@@ -207,11 +207,11 @@ export const SubMenuOptions = styled.div`
     }
 
     &:last-of-type {
-      border-radius: 0 0 var(--radii-small) var(--radii-small);
+      border-radius: 0 0 var(--radii-xsmall) var(--radii-xsmall);
     }
 
     &:first-of-type {
-      border-radius: var(--radii-small) var(--radii-small) 0 0;
+      border-radius: var(--radii-xsmall) var(--radii-xsmall) 0 0;
     }
 
     &:hover {
@@ -241,7 +241,7 @@ export const SubMenuContainer = styled.div`
   width: 100%;
   display: flex;
   background-color: var(--white);
-  border-radius: var(--radii-small);
+  border-radius: var(--radii-xsmall);
   margin-top: -0.25rem;
   max-height: 30rem;
   z-index: 1;
