@@ -1,6 +1,7 @@
 # HyperionDev Frontend
 
 ### Getting Started
+This is a public repository here: https://github.com/TendaniN/hyperion-dev it will be made private in two weeks.
 
 1. Clone this repository.
 2. Checkout the `master` branch: `git checkout master`.
