@@ -1,4 +1,4 @@
-const MENU_MAP = [
+export const MENU_MAP = [
   {
     label: "Courses",
     link: null,
@@ -67,24 +67,115 @@ const MENU_MAP = [
   },
   {
     label: "Pricing",
-    link: "https://www.hyperiondev.com/pricing/",
+    link: "pricing",
     submenu: [],
   },
   {
     label: "Our method",
-    link: "https://www.hyperiondev.com/human-mentoring/",
+    link: "human-mentoring",
     submenu: [],
   },
   {
     label: "For employers",
-    link: "https://www.hyperiondev.com/corporate-services/",
+    link: "orporate-services",
     submenu: [],
   },
   {
     label: "Contact us",
-    link: "https://www.hyperiondev.com/contact/",
+    link: "contact",
     submenu: [],
   },
 ];
 
-export { MENU_MAP };
+export const COURSE_MAP = [
+  {
+    label: "Online Coding Bootcamps",
+    info: "We partner with leading universities to deliver coding bootcamps. Study online or on campus, around your schedule. Graduate in as little as 3 months.",
+    online: true,
+    popular: true,
+    courses: [
+      {
+        id: "immersive-bootcamp",
+        label: "Certified Full Stack Web & Software Engineer Bootcamp",
+        info: "Learn to create complex and powerful software, apps, and websites in our most advanced Immersive bootcamp.",
+        part_time: 12,
+        full_time: 6,
+      },
+      {
+        id: "software-engineering-bootcamp",
+        label: "Software Engineer Bootcamp",
+        info: "Go from newbie to software engineer in no time. Learn everything you need to create amazing computer programs and software.",
+        part_time: 6,
+        full_time: 3,
+      },
+      {
+        id: "data-science-bootcamp",
+        label: "Data Scientist Bootcamp",
+        info: "Learn to use classic machine learning models and popular data science tools to work with data to empower business, research, and technology.",
+        part_time: 6,
+        full_time: 3,
+      },
+      {
+        id: "web-development-bootcamp",
+        label: "Full Stack Web Developer Bootcamp",
+        info: "Master frontend & backend web development to build database-driven web apps using the powerful MERN stack.",
+        part_time: 6,
+        full_time: 3,
+      },
+    ],
+  },
+  {
+    label: "University Bootcamps",
+    info: "",
+    online: true,
+    courses: [
+      {
+        id: "sun-web-development",
+        label:
+          "Stellenbosch University Web Development Bootcamp in Partnership with HyperionDev",
+        info: "Master frontend & backend web development to build database-driven web apps using the powerful MERN stack.",
+        part_time: 6,
+        full_time: 3,
+      },
+      {
+        id: "sun-software-engineering",
+        label:
+          "Stellenbosch University Software Engineering Bootcamp in Partnership with HyperionDev",
+        info: "Go from newbie to software engineer in no time. Learn everything you need to create amazing computer programs and software.",
+        part_time: 6,
+        full_time: 3,
+      },
+      {
+        id: "sun-data-science",
+        label:
+          "Stellenbosch University Data Science Bootcamp in Partnership with HyperionDev",
+        info: "Learn to use classic machine learning models and popular data science tools to work with data to empower business, research, and technology.",
+        part_time: 6,
+        full_time: 3,
+      },
+    ],
+  },
+  {
+    label: "On-site Coding Courses",
+    info: "We partner with leading universities to deliver coding bootcamps. Study online or on campus, around your schedule. Graduate in as little as 3 months.",
+    online: false,
+    courses: [
+      {
+        id: "onsite-fullstack-bootcamp",
+        label: "Cape Town Full Stack Web Developer Bootcamp",
+        info: "Master frontend & backend web development to build database-driven web apps using the powerful MERN stack.",
+        part_time: null,
+        full_time: 3,
+        location: "Cape Town",
+      },
+      {
+        id: "onsite-software-bootcamp",
+        label: "Cape Town Software Engineer Bootcamp",
+        info: "Go from newbie to software engineer in no time. Learn everything you need to create amazing computer programs and software.",
+        part_time: null,
+        full_time: 3,
+        location: "Cape Town",
+      },
+    ],
+  },
+];

@@ -10,10 +10,14 @@ import {
   useDispatch as useReduxDispatch,
   type TypedUseSelectorHook,
 } from "react-redux";
-
-/* Instruments */
+import createSagaMiddleware from "redux-saga";
+import sagas from "./sagas";
 import { reducer } from "./rootReducer";
-import { middleware } from "./middleware";
+// import { middleware } from "./middleware";
+
+const sagaMiddleware = createSagaMiddleware();
+
+const middleware = [sagaMiddleware];
 
 const configureStoreDefaultOptions: ConfigureStoreOptions = { reducer };
 
@@ -31,6 +35,9 @@ export const reduxStore = configureStore({
     return getDefaultMiddleware().concat(middleware);
   },
 });
+
+sagaMiddleware.run(sagas);
+
 export const useDispatch = () => useReduxDispatch<ReduxDispatch>();
 export const useSelector: TypedUseSelectorHook<ReduxState> = useReduxSelector;
 
