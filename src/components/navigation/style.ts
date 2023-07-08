@@ -22,7 +22,7 @@ export const ToggleContainer = styled.div`
   display: flex;
   position: absolute;
   top: 1.75rem;
-  right: -1.75rem;
+  right: -0.75rem;
   z-index: 999;
 
   height: 1.6rem;
@@ -53,7 +53,7 @@ export const SideNavbarContainer = styled.div`
   flex-basis: 18%;
   flex-direction: column;
   font-size: var(--font-size-small);
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   transition: visibility 0.1s ease, opacity 0.1s ease;
 
   background-color: var(--dark-blue);
@@ -101,13 +101,15 @@ export const Content = styled.div<{ isOpen: boolean }>`
   flex-direction: column;
   height: 100%;
   transition: all 400ms ease-in-out;
-  margin-top: 1rem;
+  padding: 1rem 0.5rem 0rem;
   z-index: 99;
+  overflow-x: hidden;
 
   @media (max-width: 60em) {
     position: fixed;
-    top: 3rem;
+    top: 2.5rem;
     height: calc(100% - 3rem);
+    margin: 1rem 0.5rem 1rem 0;
     overflow-y: auto;
     background: var(--dark-blue);
     width: 13rem;
@@ -258,7 +260,7 @@ export const SubMenuContainer = styled.div`
 export const Wrapper = styled.div`
   position: relative;
   transition: width 0.2s ease;
-  width: 220px;
+  width: 250px;
   background-color: var(--dark-blue);
 
   &.closed {

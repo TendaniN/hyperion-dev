@@ -13,14 +13,15 @@ export interface CourseProps {
   full_time: number | null;
   label: string;
   info: string;
+  popular?: boolean;
   location?: string;
 }
 
 export interface CoursesState {
+  id: string;
   label: string;
   info: string;
   online: boolean;
-  popular?: boolean;
   courses: Array<CourseProps>;
 }
 

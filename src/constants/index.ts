@@ -89,14 +89,16 @@ export const MENU_MAP = [
 
 export const COURSE_MAP = [
   {
+    id: "bootcamps",
     label: "Online Coding Bootcamps",
+
     info: "We partner with leading universities to deliver coding bootcamps. Study online or on campus, around your schedule. Graduate in as little as 3 months.",
     online: true,
-    popular: true,
     courses: [
       {
         id: "immersive",
         label: "Certified Full Stack Web & Software Engineer Bootcamp",
+        popular: true,
         info: "Learn to create complex and powerful software, apps, and websites in our most advanced Immersive bootcamp.",
         part_time: 12,
         full_time: 6,
@@ -125,6 +127,7 @@ export const COURSE_MAP = [
     ],
   },
   {
+    id: "university",
     label: "University Bootcamps",
     info: "",
     online: true,
@@ -134,6 +137,7 @@ export const COURSE_MAP = [
         label:
           "Stellenbosch University Web Development Bootcamp in Partnership with HyperionDev",
         info: "Master frontend & backend web development to build database-driven web apps using the powerful MERN stack.",
+        location: "stellenbosch",
         part_time: 6,
         full_time: 3,
       },
@@ -142,6 +146,7 @@ export const COURSE_MAP = [
         label:
           "Stellenbosch University Software Engineering Bootcamp in Partnership with HyperionDev",
         info: "Go from newbie to software engineer in no time. Learn everything you need to create amazing computer programs and software.",
+        location: "stellenbosch",
         part_time: 6,
         full_time: 3,
       },
@@ -150,12 +155,14 @@ export const COURSE_MAP = [
         label:
           "Stellenbosch University Data Science Bootcamp in Partnership with HyperionDev",
         info: "Learn to use classic machine learning models and popular data science tools to work with data to empower business, research, and technology.",
+        location: "stellenbosch",
         part_time: 6,
         full_time: 3,
       },
     ],
   },
   {
+    id: "onsite",
     label: "On-site Coding Courses",
     info: "We partner with leading universities to deliver coding bootcamps. Study online or on campus, around your schedule. Graduate in as little as 3 months.",
     online: false,
