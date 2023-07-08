@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { TbCircleX } from "react-icons/tb";
 
-import { Toast, ToastBody } from "reactstrap";
-
 const ToastButton = styled.button`
   border: none;
   transition: all 150ms ease-out;
@@ -37,7 +35,7 @@ const StyledToaster = styled.div`
   }
 `;
 
-const StyledToast = styled(Toast)`
+const StyledToast = styled.div`
   background: url(/src/assets/blue-swirls-banner-bg.png); // image quality is not great but would look better in Prod
   background-size: 220% 100%;
   min-width: 35rem !important;
@@ -127,36 +125,38 @@ export const Toaster = () => {
   return (
     <div>
       <StyledToaster>
-        <StyledToast isOpen={showToaster}>
-          <ToastBody
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              width: "100%",
-              justifyContent: "space-between",
-            }}
-          >
-            <div>
-              <ToastButton onClick={() => handleClose()} className="my-auto">
-                <TbCircleX />
-              </ToastButton>
-            </div>
+        {showToaster && (
+          <StyledToast>
             <div
-              className="p-0"
               style={{
                 display: "flex",
-                justifyContent: "flex-end",
-                flexDirection: "column",
+                flexDirection: "row",
+                width: "100%",
+                justifyContent: "space-between",
               }}
             >
-              <div className="heading">LEARN MORE ABOUT OUR BOOTCAMPS</div>
-              <div className="info">Join our next info session webinar!</div>
-              <div className="button-row">
-                <button className="register-button">Register Now</button>
+              <div>
+                <ToastButton onClick={() => handleClose()} className="my-auto">
+                  <TbCircleX />
+                </ToastButton>
+              </div>
+              <div
+                className="p-0"
+                style={{
+                  display: "flex",
+                  justifyContent: "flex-end",
+                  flexDirection: "column",
+                }}
+              >
+                <div className="heading">LEARN MORE ABOUT OUR BOOTCAMPS</div>
+                <div className="info">Join our next info session webinar!</div>
+                <div className="button-row">
+                  <button className="register-button">Register Now</button>
+                </div>
               </div>
             </div>
-          </ToastBody>
-        </StyledToast>
+          </StyledToast>
+        )}
       </StyledToaster>
     </div>
   );

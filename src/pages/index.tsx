@@ -18,7 +18,7 @@ const Pages = () => {
       <Toaster />
       <SideNav />
       <Switch>
-        <Route path="/home">
+        <Route path="/">
           <HomePage />
         </Route>
         <Route path="/pricing">

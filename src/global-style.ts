@@ -13,7 +13,7 @@ body {
   scrollbar-color: var(--blue) transparent;
 
   &::-webkit-scrollbar {
-    width: 0.5em;
+    width: 10px;
   }
 
   &::-webkit-scrollbar-thumb {

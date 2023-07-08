@@ -69,12 +69,12 @@ export const SideNav = () => {
           )}
         </ToggleContainer>
         <SideNavbarContainer
-          className={`${!showNav && "closed"} voyc-scrollbar-light`}
+          className={`${!showNav && "closed"} scrollbar`}
           id="sidebar"
           ref={menuRef}
         >
           <StyledHeader>
-            <LogoContainer to="/home">
+            <LogoContainer to="/">
               <Logo type="noText" />
             </LogoContainer>
             {isSmallDevice && (
