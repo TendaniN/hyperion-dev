@@ -5,61 +5,61 @@ export const MENU_MAP = [
     submenu: [
       {
         label: "View Immersive Learning",
-        link: "",
+        link: "bootcamps/immersive",
         submenu: [
           {
             label: "Full Stack Web & Software Engineer Bootcamp",
-            link: "",
+            link: "bootcamps/immersive",
           },
         ],
       },
       {
         label: "View On-Site Bootcamps",
-        link: "",
+        link: "onsite",
         submenu: [
           {
             label: "Web Developer",
-            link: "",
+            link: "onsite/capetown/onsite-fullstack-bootcamp",
           },
           {
             label: "Software Engineer",
-            link: "",
+            link: "onsite/capetown/onsite-software-bootcamp",
           },
         ],
       },
       {
         label: "View Online Bootcamps",
-        link: "",
+        link: "bootcamps",
         submenu: [
           {
             label: "Web Developer",
-            link: "",
+            link: "bootcamps/web-development",
           },
           {
             label: "Software Engineer",
-            link: "",
+            link: "bootcamps/software-engineering",
           },
           {
             label: "Data Science",
-            link: "",
+            link: "bootcamps/data-science",
           },
         ],
       },
       {
         label: "Stellenbosch University",
-        link: "",
+        link: "university/stellenbosch",
         submenu: [
           {
             label: "Web Developer",
-            link: "",
+            link: "university/stellenbosch/sun-web-development",
           },
           {
             label: "Software Engineer",
-            link: "",
+            link: "university/stellenbosch/sun-software-engineering",
           },
           {
             label: "Data Science",
-            link: "",
+            link: "university/stellenbosch/sun-data-science",
           },
         ],
       },
@@ -77,7 +77,7 @@ export const MENU_MAP = [
   },
   {
     label: "For employers",
-    link: "orporate-services",
+    link: "corporate-services",
     submenu: [],
   },
   {
@@ -95,28 +95,28 @@ export const COURSE_MAP = [
     popular: true,
     courses: [
       {
-        id: "immersive-bootcamp",
+        id: "immersive",
         label: "Certified Full Stack Web & Software Engineer Bootcamp",
         info: "Learn to create complex and powerful software, apps, and websites in our most advanced Immersive bootcamp.",
         part_time: 12,
         full_time: 6,
       },
       {
-        id: "software-engineering-bootcamp",
+        id: "software-engineering",
         label: "Software Engineer Bootcamp",
         info: "Go from newbie to software engineer in no time. Learn everything you need to create amazing computer programs and software.",
         part_time: 6,
         full_time: 3,
       },
       {
-        id: "data-science-bootcamp",
+        id: "data-science",
         label: "Data Scientist Bootcamp",
         info: "Learn to use classic machine learning models and popular data science tools to work with data to empower business, research, and technology.",
         part_time: 6,
         full_time: 3,
       },
       {
-        id: "web-development-bootcamp",
+        id: "web-development",
         label: "Full Stack Web Developer Bootcamp",
         info: "Master frontend & backend web development to build database-driven web apps using the powerful MERN stack.",
         part_time: 6,
