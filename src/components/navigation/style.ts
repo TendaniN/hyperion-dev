@@ -245,6 +245,7 @@ export const SubMenuContainer = styled.div`
   margin-top: -0.25rem;
   max-height: 30rem;
   z-index: 1;
+  box-shadow: var(--shadow-normal);
 
   overflow-y: auto;
   overflow-x: hidden;

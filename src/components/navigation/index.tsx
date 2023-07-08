@@ -92,9 +92,10 @@ export const SideNav = () => {
               {MENU_MAP.map((item) => (
                 <div
                   key={`menu-item-${item.label}`}
-                  onMouseOver={() => handleShowSubMenu(item.submenu.length > 0)}
-                  onMouseLeave={() => updateSubMenuOpen(false)}
-                  onClick={() => handleShowSubMenu(item.submenu.length > 0)}
+                  // can make it on hover but would update onClick to handleShowSubMenu so it still works in mobile version.
+                  // onMouseOver={() => handleShowSubMenu(item.submenu.length > 0)}
+                  // onMouseLeave={() => updateSubMenuOpen(false)}
+                  onClick={() => updateSubMenuOpen()}
                 >
                   <Link to="/">
                     <SideNavOption>
