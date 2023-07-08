@@ -1,4 +1,4 @@
-import { Header } from "components/header";
+import { Header } from "components/header/index";
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import styled from "styled-components/macro";
