@@ -88,6 +88,11 @@ export const SideNavbarContainer = styled.div`
     right: 0;
     box-shadow: var(--shadow-normal);
     z-index: 999;
+
+    &.closed {
+      opacity: 1;
+      visibility: visible;
+    }
   }
 `;
 
@@ -275,6 +280,10 @@ export const Wrapper = styled.div`
   @media (max-width: 60em) {
     background-color: unset;
     width: unset;
+
+    &.closed {
+      width: 100%;
+    }
   }
 `;
 

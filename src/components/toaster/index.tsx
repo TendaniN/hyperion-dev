@@ -1,9 +1,8 @@
-import React, { useCallback, useEffect, useState } from "react";
-import { connect, useDispatch } from "react-redux";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { TbCircleX } from "react-icons/tb";
 
-import { Col, Row, Toast, ToastBody } from "reactstrap";
+import { Toast, ToastBody } from "reactstrap";
 
 const ToastButton = styled.button`
   border: none;
@@ -150,13 +149,11 @@ export const Toaster = () => {
                 flexDirection: "column",
               }}
             >
-              <Row className="mx-0 heading">LEARN MORE ABOUT OUR BOOTCAMPS</Row>
-              <Row className="mx-0 info">
-                Join our next info session webinar!
-              </Row>
-              <Row className="mx-0 button-row">
+              <div className="heading">LEARN MORE ABOUT OUR BOOTCAMPS</div>
+              <div className="info">Join our next info session webinar!</div>
+              <div className="button-row">
                 <button className="register-button">Register Now</button>
-              </Row>
+              </div>
             </div>
           </ToastBody>
         </StyledToast>
