@@ -38,7 +38,7 @@ const StyledToaster = styled.div`
 `;
 
 const StyledToast = styled(Toast)`
-  background: url(src/assets/blue-swirls-banner-bg.png); // image quality is not great but would look better in Prod
+  background: url(/src/assets/blue-swirls-banner-bg.png); // image quality is not great but would look better in Prod
   background-size: 220% 100%;
   min-width: 35rem !important;
   padding: 0 1rem 1rem 0 !important;

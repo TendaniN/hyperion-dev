@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import { MENU_MAP } from "constants/index";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import {
   RxHamburgerMenu as MenuIcon,
   RxCross2 as CloseIcon,
@@ -28,6 +28,7 @@ import {
 
 export const SideNav = () => {
   const menuRef = useRef(null);
+  const location = useLocation();
 
   const [showBanner, updateShowBanner] = useState(true);
   const [showMenu, toggleShowMenu] = useToggle(false);
@@ -73,7 +74,7 @@ export const SideNav = () => {
           ref={menuRef}
         >
           <StyledHeader>
-            <LogoContainer to="/">
+            <LogoContainer to="/home">
               <Logo type="noText" />
             </LogoContainer>
             {isSmallDevice && (
@@ -97,7 +98,7 @@ export const SideNav = () => {
                   // onMouseLeave={() => updateSubMenuOpen(false)}
                   onClick={() => updateSubMenuOpen()}
                 >
-                  <Link to="/">
+                  <Link to="/" onClick={(event) => event.preventDefault()}>
                     <SideNavOption>
                       <SideNavText>{item.label}</SideNavText>
                       {item.submenu.length > 0 &&
@@ -115,29 +116,38 @@ export const SideNav = () => {
                           subMenuOpen ? "open" : undefined
                         }`}
                       >
-                        {item.submenu.map((subItem) => (
-                          <>
-                            <Link
-                              className={`dropdown-item ${
-                                item.submenu.length > 0 ? "heading" : ""
-                              }`}
-                              key={`submenu-item-${subItem.label}`}
-                              to={subItem.link ? subItem.link : ""}
-                            >
-                              {subItem.label}
-                            </Link>
-                            {item.submenu.length > 0 &&
-                              item.submenu.map(({ label, link }) => (
-                                <Link
-                                  className="dropdown-item"
-                                  key={`submenu-item-${label}`}
-                                  to={link ? link : ""}
-                                >
-                                  {label}
-                                </Link>
-                              ))}
-                          </>
-                        ))}
+                        {item.submenu.map((subItem) => {
+                          const isActive =
+                            location.pathname === `/${subItem.link}`;
+                          return (
+                            <>
+                              <Link
+                                className={`dropdown-item ${
+                                  subItem.submenu.length > 0 ? "heading" : ""
+                                }${isActive ? " active" : ""}`}
+                                aria-current={isActive ? "location" : undefined}
+                                key={`submenu-item-${subItem.label}`}
+                                to={`/${subItem.link ? subItem.link : ""}`}
+                              >
+                                {subItem.label}
+                              </Link>
+                              {subItem.submenu.length > 0 &&
+                                subItem.submenu.map(({ label, link }) => (
+                                  <Link
+                                    className={`dropdown-item ${
+                                      location.pathname === `/${link}`
+                                        ? " active"
+                                        : ""
+                                    }`}
+                                    key={`submenu-item-${label}`}
+                                    to={`/${link ? link : ""}`}
+                                  >
+                                    {label}
+                                  </Link>
+                                ))}
+                            </>
+                          );
+                        })}
                       </SubMenuOptions>
                     </SubMenuContainer>
                   )}

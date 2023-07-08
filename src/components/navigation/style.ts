@@ -203,20 +203,18 @@ export const SubMenuOptions = styled.div`
     text-decoration: none;
     text-align: left;
     font-size: var(--small-x);
-    border-radius: none;
+    border-radius: 0 !important;
+    text-wrap: balance;
+    width: 100%;
+
+    &.active {
+      background-color: var(--strong-soft-blue);
+    }
 
     &.heading {
       font-weight: 600;
       padding: 0.5rem 1rem;
       color: var(--dark-moderate-blue);
-    }
-
-    &:last-of-type {
-      border-radius: 0 0 var(--radii-xsmall) var(--radii-xsmall);
-    }
-
-    &:first-of-type {
-      border-radius: var(--radii-xsmall) var(--radii-xsmall) 0 0;
     }
 
     &:hover {
@@ -228,16 +226,6 @@ export const SubMenuOptions = styled.div`
     max-height: 20rem;
     opacity: 1;
     transition: max-height 0.15s ease-in;
-  }
-  & a {
-    margin: 0.2rem 0;
-    padding: 0.2rem 0.4rem;
-    border-radius: var(--small-x);
-
-    &.active {
-      font-weight: 700;
-      text-decoration: underline;
-    }
   }
 `;
 

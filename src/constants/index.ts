@@ -5,61 +5,61 @@ export const MENU_MAP = [
     submenu: [
       {
         label: "View Immersive Learning",
-        link: "bootcamps/immersive",
+        link: "courses/bootcamps/immersive",
         submenu: [
           {
             label: "Full Stack Web & Software Engineer Bootcamp",
-            link: "bootcamps/immersive",
+            link: "courses/bootcamps/immersive",
           },
         ],
       },
       {
         label: "View On-Site Bootcamps",
-        link: "onsite",
+        link: "courses/onsite",
         submenu: [
           {
             label: "Web Developer",
-            link: "onsite/capetown/onsite-fullstack-bootcamp",
+            link: "courses/onsite/capetown/onsite-fullstack-bootcamp",
           },
           {
             label: "Software Engineer",
-            link: "onsite/capetown/onsite-software-bootcamp",
+            link: "courses/onsite/capetown/onsite-software-bootcamp",
           },
         ],
       },
       {
         label: "View Online Bootcamps",
-        link: "bootcamps",
+        link: "courses/bootcamps",
         submenu: [
           {
             label: "Web Developer",
-            link: "bootcamps/web-development",
+            link: "courses/bootcamps/web-development",
           },
           {
             label: "Software Engineer",
-            link: "bootcamps/software-engineering",
+            link: "courses/bootcamps/software-engineering",
           },
           {
             label: "Data Science",
-            link: "bootcamps/data-science",
+            link: "courses/bootcamps/data-science",
           },
         ],
       },
       {
         label: "Stellenbosch University",
-        link: "university/stellenbosch",
+        link: "courses/university/stellenbosch",
         submenu: [
           {
             label: "Web Developer",
-            link: "university/stellenbosch/sun-web-development",
+            link: "courses/university/stellenbosch/sun-web-development",
           },
           {
             label: "Software Engineer",
-            link: "university/stellenbosch/sun-software-engineering",
+            link: "courses/university/stellenbosch/sun-software-engineering",
           },
           {
             label: "Data Science",
-            link: "university/stellenbosch/sun-data-science",
+            link: "courses/university/stellenbosch/sun-data-science",
           },
         ],
       },

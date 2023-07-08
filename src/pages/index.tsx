@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import styled from "styled-components/macro";
 import { Toaster } from "components/toaster";
 import Courses from "./courses";
+import HomePage from "./home";
 
 const PageContainer = styled.div`
   width: 100vw;
@@ -17,7 +18,7 @@ const Pages = () => {
       <SideNav />
       <Switch>
         <Route path="/home">
-          <div></div>
+          <HomePage />
         </Route>
         <Route path="/pricing">
           <div></div>
