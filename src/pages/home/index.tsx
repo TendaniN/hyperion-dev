@@ -12,18 +12,28 @@ const StyledCoursesGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
   grid-column-gap: 30px;
   grid-row-gap: 30px;
+  z-index: 0;
+  position: relative;
 `;
 
 const StyledPageContainer = styled.div`
-  width: calc(100% - 100px);
+  width: 80%;
   padding: 50px;
   overflow: auto;
+  z-index: 0;
+  position: relative;
+
+  @media (max-width: 60em) {
+    width: 100%;
+  }
 `;
 
 const CourseSlot = styled(Link)`
   border-radius: var(--radii-small);
   box-shadow: var(--shadow-elevated);
   text-decoration: none;
+  positon: relative;
+  z-index: 0;
 
   :hover {
     transform: scale(1.02);
@@ -39,6 +49,7 @@ const CourseSlot = styled(Link)`
     font-weight: 700;
     font-family: var(--MontserratExtraBold);
     padding: 25px;
+    z-index: 0;
   }
 `;
 
@@ -47,10 +58,10 @@ const HomePage = () => {
   const courses = useSelector((state: Props) => state.courses.courses);
 
   const getCourseLink = (course: CourseProps, id: string) => {
-    let link = `/courses/${id}/`;
+    let link = `/hyperion-dev/courses/${id}/`;
     const { id: courseId, location } = course;
     if (showOnline) {
-      if (location !== "") {
+      if (location) {
         link += `${location}/`;
       }
       link += courseId;

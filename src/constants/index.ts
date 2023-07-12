@@ -91,7 +91,6 @@ export const COURSE_MAP = [
   {
     id: "bootcamps",
     label: "Online Coding Bootcamps",
-
     info: "We partner with leading universities to deliver coding bootcamps. Study online or on campus, around your schedule. Graduate in as little as 3 months.",
     online: true,
     courses: [

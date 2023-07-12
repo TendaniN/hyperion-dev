@@ -15,25 +15,25 @@ const PageContainer = styled.div`
 const Pages = () => {
   return (
     <PageContainer>
-      <Toaster />
       <SideNav />
       <Switch>
-        <Route path="/">
+        <Route exact path="/hyperion-dev/">
+          <Toaster />
           <HomePage />
         </Route>
-        <Route path="/pricing">
-          <div></div>
+        <Route path="/hyperion-dev/pricing">
+          <div>Pricing</div>
         </Route>
-        <Route path="/human-mentoring">
-          <div></div>
+        <Route path="/hyperion-dev/human-mentoring">
+          <div>About us</div>
         </Route>
-        <Route path="/corporate-services">
-          <div></div>
+        <Route path="/hyperion-dev/corporate-services">
+          <div>For employers</div>
         </Route>
-        <Route path="/contact">
-          <div></div>
+        <Route path="/hyperion-dev/contact">
+          <div>Contact us</div>
         </Route>
-        <Route path="/courses">
+        <Route path="/hyperion-dev/courses">
           <Courses />
         </Route>
       </Switch>

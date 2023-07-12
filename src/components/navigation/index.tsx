@@ -74,7 +74,7 @@ export const SideNav = () => {
           ref={menuRef}
         >
           <StyledHeader>
-            <LogoContainer to="/">
+            <LogoContainer to="/hyperion-dev/">
               <Logo type="noText" />
             </LogoContainer>
             {isSmallDevice && (
@@ -90,69 +90,89 @@ export const SideNav = () => {
           </StyledHeader>
           <Content id="menu" isOpen={showMenu}>
             <div style={{ flexDirection: "column", display: "flex" }}>
-              {MENU_MAP.map((item) => (
-                <div
-                  key={`menu-item-${item.label}`}
-                  // can make it on hover but would update onClick to handleShowSubMenu so it still works in mobile version.
-                  // onMouseOver={() => handleShowSubMenu(item.submenu.length > 0)}
-                  // onMouseLeave={() => updateSubMenuOpen(false)}
-                  onClick={() => updateSubMenuOpen()}
-                >
-                  <Link to="/" onClick={(event) => event.preventDefault()}>
-                    <SideNavOption>
-                      <SideNavText>{item.label}</SideNavText>
-                      {item.submenu.length > 0 &&
-                        (subMenuOpen ? (
-                          <ChevronDownIcon />
-                        ) : (
-                          <ChevronRightIcon />
-                        ))}
-                    </SideNavOption>
-                  </Link>
-                  {item.submenu.length > 0 && subMenuOpen && (
-                    <SubMenuContainer>
-                      <SubMenuOptions
-                        className={`submenu ${
-                          subMenuOpen ? "open" : undefined
-                        }`}
-                      >
-                        {item.submenu.map((subItem) => {
-                          const isActive =
-                            location.pathname === `/${subItem.link}`;
-                          return (
-                            <>
-                              <Link
-                                className={`dropdown-item ${
-                                  subItem.submenu.length > 0 ? "heading" : ""
-                                }${isActive ? " active" : ""}`}
-                                aria-current={isActive ? "location" : undefined}
-                                key={`submenu-item-${subItem.label}`}
-                                to={`/${subItem.link ? subItem.link : ""}`}
-                              >
-                                {subItem.label}
-                              </Link>
-                              {subItem.submenu.length > 0 &&
-                                subItem.submenu.map(({ label, link }) => (
-                                  <Link
-                                    className={`dropdown-item ${
-                                      location.pathname === `/${link}`
-                                        ? " active"
-                                        : ""
-                                    }`}
-                                    key={`submenu-item-${label}`}
-                                    to={`/${link ? link : ""}`}
-                                  >
-                                    {label}
-                                  </Link>
-                                ))}
-                            </>
-                          );
-                        })}
-                      </SubMenuOptions>
-                    </SubMenuContainer>
-                  )}
-                </div>
-              ))}
+              {MENU_MAP.map((item) => {
+                const isActive = location.pathname.includes(`/${item.link}`);
+                return (
+                  <div
+                    key={`menu-item-${item.label}`}
+                    // can make it on hover but would update onClick to handleShowSubMenu so it still works in mobile version.
+                    // onMouseOver={() => handleShowSubMenu(item.submenu.length > 0)}
+                    // onMouseLeave={() => updateSubMenuOpen(false)}
+                    onClick={
+                      item.submenu.length > 0
+                        ? () => updateSubMenuOpen()
+                        : () => {}
+                    }
+                  >
+                    <Link
+                      to={`/hyperion-dev/${
+                        item.submenu.length > 0 ? "" : item.link
+                      }`}
+                      onClick={
+                        item.submenu.length > 0
+                          ? (event) => event.preventDefault()
+                          : () => {}
+                      }
+                    >
+                      <SideNavOption className={isActive ? "active" : ""}>
+                        <SideNavText>{item.label}</SideNavText>
+                        {item.submenu.length > 0 &&
+                          (subMenuOpen ? (
+                            <ChevronDownIcon />
+                          ) : (
+                            <ChevronRightIcon />
+                          ))}
+                      </SideNavOption>
+                    </Link>
+                    {item.submenu.length > 0 && subMenuOpen && (
+                      <SubMenuContainer>
+                        <SubMenuOptions
+                          className={`submenu ${
+                            subMenuOpen ? "open" : undefined
+                          }`}
+                        >
+                          {item.submenu.map((subItem) => {
+                            const isSubActive =
+                              location.pathname === `/${subItem.link}`;
+                            return (
+                              <>
+                                <Link
+                                  className={`dropdown-item ${
+                                    subItem.submenu.length > 0 ? "heading" : ""
+                                  }${isSubActive ? " active" : ""}`}
+                                  aria-current={
+                                    isSubActive ? "location" : undefined
+                                  }
+                                  key={`submenu-item-${subItem.label}`}
+                                  to={`/hyperion-dev/${
+                                    subItem.link ? subItem.link : ""
+                                  }`}
+                                >
+                                  {subItem.label}
+                                </Link>
+                                {subItem.submenu.length > 0 &&
+                                  subItem.submenu.map(({ label, link }) => (
+                                    <Link
+                                      className={`dropdown-item ${
+                                        location.pathname === `/${link}`
+                                          ? " active"
+                                          : ""
+                                      }`}
+                                      key={`submenu-item-${label}`}
+                                      to={`/${link ? link : ""}`}
+                                    >
+                                      {label}
+                                    </Link>
+                                  ))}
+                              </>
+                            );
+                          })}
+                        </SubMenuOptions>
+                      </SubMenuContainer>
+                    )}
+                  </div>
+                );
+              })}
             </div>
             <SideNavBottomContainer>
               <Link to="/login">

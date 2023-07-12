@@ -159,6 +159,18 @@ export const SideNavOption = styled.div`
   position: relative;
   transition: background-color 100ms ease-in-out;
 
+  &.active,
+  &.active:hover {
+    position: relative;
+    background-color: var(--white);
+    color: var(--very-dark-blue);
+    margin-right: -0.75rem;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+  }
+
   :hover,
   &[aria-current="page"] {
     background-color: var(--very-dark-blue);

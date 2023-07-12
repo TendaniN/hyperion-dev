@@ -27,22 +27,25 @@ const ToastButton = styled.button`
 const StyledToaster = styled.div`
   position: absolute;
   top: 0.5rem;
-  right: 0.5rem;
-  z-index: 99999999;
+  right: 2.5rem;
+  z-index: 2147483647;
 
   @media (max-width: 60em) {
     top: 4rem;
+    z-index: 2147483647;
   }
 `;
 
 const StyledToast = styled.div`
-  background: url(/src/assets/blue-swirls-banner-bg.png); // image quality is not great but would look better in Prod
+  background: url("./src/assets/blue-swirls-banner-bg.png"); // image quality is not great but would look better in Prod
   background-size: 220% 100%;
   min-width: 35rem !important;
   padding: 0 1rem 1rem 0 !important;
   border-radius: var(--radii-small);
   box-shadow: var(--shadow-elevated);
   justify-content: flex-end;
+  z-index: 2147483647;
+  position: relative;
 
   .heading {
     font-family: var(--MontserratExtraBold);
@@ -123,41 +126,39 @@ export const Toaster = () => {
   // }, []);
 
   return (
-    <div>
-      <StyledToaster>
-        {showToaster && (
-          <StyledToast>
+    <StyledToaster>
+      {showToaster && (
+        <StyledToast>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              width: "100%",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
+              <ToastButton onClick={() => handleClose()} className="my-auto">
+                <TbCircleX />
+              </ToastButton>
+            </div>
             <div
+              className="p-0"
               style={{
                 display: "flex",
-                flexDirection: "row",
-                width: "100%",
-                justifyContent: "space-between",
+                justifyContent: "flex-end",
+                flexDirection: "column",
               }}
             >
-              <div>
-                <ToastButton onClick={() => handleClose()} className="my-auto">
-                  <TbCircleX />
-                </ToastButton>
-              </div>
-              <div
-                className="p-0"
-                style={{
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  flexDirection: "column",
-                }}
-              >
-                <div className="heading">LEARN MORE ABOUT OUR BOOTCAMPS</div>
-                <div className="info">Join our next info session webinar!</div>
-                <div className="button-row">
-                  <button className="register-button">Register Now</button>
-                </div>
+              <div className="heading">LEARN MORE ABOUT OUR BOOTCAMPS</div>
+              <div className="info">Join our next info session webinar!</div>
+              <div className="button-row">
+                <button className="register-button">Register Now</button>
               </div>
             </div>
-          </StyledToast>
-        )}
-      </StyledToaster>
-    </div>
+          </div>
+        </StyledToast>
+      )}
+    </StyledToaster>
   );
 };
