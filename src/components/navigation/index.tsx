@@ -159,7 +159,7 @@ export const SideNav = () => {
                                           : ""
                                       }`}
                                       key={`submenu-item-${label}`}
-                                      to={`/${link ? link : ""}`}
+                                      to={`/hyperion-dev/${link ? link : ""}`}
                                     >
                                       {label}
                                     </Link>
