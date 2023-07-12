@@ -1,9 +1,9 @@
 {
   "name": "hyperion-dev",
-  "private": true,
+  "private": false,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://tendanin.github.io/hyperion-dev/",
+  "homepage": "https://tendanin.github.io/hyperion-dev",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
